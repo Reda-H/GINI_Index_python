@@ -24,3 +24,9 @@ Example of use:
 	
 	
 	>>0.047815820543093246
+	
+
+Future Changes Planned:
+	
+	*Add an easier way to give the input, such as taking a 2d array and getting the values directly from it, and the last 1d array of the 2d array is the class
+	*Add a possible formatting to the output (e.g: Student factor: 0.142098...)
