@@ -29,6 +29,9 @@ def count_false_values(c,x):
 #   The main part of the code, proceed with caution
 ##################################################
 def gini(characteristic, x):
+    # From Array to Numpy Array
+    characteristic = np.array(characteristic)
+    x = np.array(x)
     #GINI(CLASS) is this first part
     GINI_x = [0,0]
     GINI_x[0] = len(count_true_values(x, x))/len(x)
@@ -50,4 +53,3 @@ def gini(characteristic, x):
     return weighted_average
 
 # print(gini(char1, char_class))
-# print(gini(np.array([0, 1, 1 , 1, 1, 0]),np.array([0, 0, 1 , 0, 0, 1]) ))
