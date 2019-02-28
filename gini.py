@@ -28,7 +28,7 @@ def count_false_values(c,x):
 ##################################################
 #   The main part of the code, proceed with caution
 ##################################################
-def gini(characteristic, x):
+def gini(characteristic, class):
     # From Array to Numpy Array
     characteristic = np.array(characteristic)
     x = np.array(x)
