@@ -28,23 +28,23 @@ def count_false_values(c,x):
 ##################################################
 #   The main part of the code, proceed with caution
 ##################################################
-def gini(characteristic, class):
+def gini(characteristic, class_charac):
     # From Array to Numpy Array
     characteristic = np.array(characteristic)
-    x = np.array(x)
+    class_charac = np.array(class_charac)
     #GINI(CLASS) is this first part
     GINI_x = [0,0]
-    GINI_x[0] = len(count_true_values(x, x))/len(x)
+    GINI_x[0] = len(count_true_values(class_charac, class_charac))/len(class_charac)
     GINI_x[1] = 1-GINI_x[0]
     GINI_x_result = 1-(np.power(GINI_x[0], 2)+np.power(GINI_x[1], 2))
     #GINI(CHAR=TRUE) is this part
     GINI_true_c = [0,0]
-    GINI_true_c[0] = len(count_true_values(characteristic, x))/np.count_nonzero(characteristic, axis=0)
+    GINI_true_c[0] = len(count_true_values(characteristic, class_charac))/np.count_nonzero(characteristic, axis=0)
     GINI_true_c[1] = 1-GINI_true_c[0]
     GINI_true_c_result = 1-(np.power(GINI_true_c[0], 2)+np.power(GINI_true_c[1], 2))
     #GINI(CHAR=FALSE) is this part
     GINI_false_c = [0,0]
-    GINI_false_c[0] = len(count_false_values(characteristic, x))/(len(x)-np.count_nonzero(characteristic, axis=0))
+    GINI_false_c[0] = len(count_false_values(characteristic, class_charac))/(len(class_charac)-np.count_nonzero(characteristic, axis=0))
     GINI_false_c[1] = 1-GINI_false_c[0]
     GINI_false_c_result = 1-(np.power(GINI_false_c[0], 2)+np.power(GINI_false_c[1], 2))
     #WEIGHTED AVERAGE at the end
